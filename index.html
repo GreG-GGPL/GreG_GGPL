@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me – GreG_GGPL</title>
+  <link rel="icon" type="image/jpeg" href="avatar.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 25px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 15px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .profile h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .profile p {
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin: 30px 0 20px;
+      font-weight: bold;
+      border-left: 5px solid #00ffff;
+      padding-left: 10px;
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .skill {
+      width: 100%;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+     transform: scale(1.03);
+    }
+ 
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .progress-container {
+      width: 100%;
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 22px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .progress-bar {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 10px;
+      transition: width 1s ease;
+    }
+
+    .html  { background: linear-gradient(90deg, #e44d26, #f16529); width: 40%; }
+    .css   { background: linear-gradient(90deg, #264de4, #2965f1); width: 45%; }
+    .js    { background: linear-gradient(90deg, #f0db4f, #f7e018); color: #222; width: 60%; }
+    .node  { background: linear-gradient(90deg, #3C873A, #68a063); width: 85%; }
+
+    .tooltip::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 0;
+      bottom: 110%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .glass-container {
+        padding: 25px;
+      }
+
+      .profile h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass-container">
+    <div class="profile">
+      <img src="avatar.jpg" alt="GreG_GGPL Avatar" />
+      <h1>GreG_GGPL – Full Stack Developer</h1>
+      <p>Tworzę nowoczesne aplikacje webowe, które łączą funkcjonalność z designem. Kocham kod i buduję rzeczy, które robią różnicę.</p>
+    </div>
+
+    <div class="section-title">Umiejętności techniczne</div>
+    <div class="skills">
+
+      <div class="skill tooltip" data-tip="HTML to szkielety każdej strony.">
+        <div class="skill-name">HTML</div>
+        <div class="progress-container">
+          <div class="progress-bar html">40%</div>
+        </div>
+      </div>
+
+      <div class="skill tooltip" data-tip="To, co czujesz wizualnie, to zasługa CSS.">
+        <div class="skill-name">CSS</div>
+        <div class="progress-container">
+          <div class="progress-bar css">45%</div>
+        </div>
+      </div>
+
+      <div class="skill tooltip" data-tip="Ożywiam strony internetowe!">
+        <div class="skill-name">JavaScript</div>
+        <div class="progress-container">
+          <div class="progress-bar js">60%</div>
+        </div>
+      </div>
+
+      <div class="skill tooltip" data-tip="Backend? Żaden problem.">
+        <div class="skill-name">Node.js</div>
+        <div class="progress-container">
+          <div class="progress-bar node">85%</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
